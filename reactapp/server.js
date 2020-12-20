@@ -15,8 +15,17 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
+mongodb+srv://dbUser:Bronx@cluster0.kaxvs.mongodb.net/dbUser?retryWrites=true&w=majority
+
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googleBooks");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googleBooks",
+{
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false
+}
+);
 
 // Start the API server
 app.listen(PORT, function() {
