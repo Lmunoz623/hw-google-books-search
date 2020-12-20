@@ -8,11 +8,11 @@ export default function Card(props) {
                     <img src={props.image} alt="book image"/>
                 </div>
                 <div className="col-md-8">
-                    <div className="card-body">
+                    <div className="card-body" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" tabindex="0">
                         <h5 className="card-title">{props.title}</h5>
                         <p className="card-text">By: {props.author}</p>
-                        <p className="card-text">By: {props.summary}</p>
-                        <a href={props.view} className="btn btn-primary">View Book</a>
+                        <p className="card-text">{props.description}</p>
+                        <a href={props.link} className="btn btn-primary">View Book</a>
                         <a href="#" className="btn btn-primary">Save</a>
                     </div>
                 </div>
